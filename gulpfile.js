@@ -33,7 +33,7 @@ gulp.task('styles', function() {
 
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/js/init.js', 'app/js/**/*.model.js', 'app/js/**/*.js'])
+  return gulp.src(['app/js/init.js', 'app/js/**/*.model.js', 'app/js/**/*.collection.js', 'app/js/**/*.js'])
     .pipe(sourcemaps.init())
       .pipe(concat('app.min.js'))
       .pipe(uglify())

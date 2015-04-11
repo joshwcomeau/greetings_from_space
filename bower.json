@@ -1,8 +1,10 @@
 {
   "name": "Greetings From Space",
   "dependencies": {
-    "jquery":     "latest",
-    "underscore": "latest",
-    "backbone":   "latest"
+    "jquery":       "latest",
+    "underscore":   "latest",
+    "backbone":     "latest",
+    "firebase":     "latest",
+    "backbonefire": "latest"
   }
 }
