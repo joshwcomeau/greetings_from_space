@@ -2,7 +2,6 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
     minifycss     = require('gulp-minify-css'),
-    jshint        = require('gulp-jshint'),
     uglify        = require('gulp-uglify'),
     concat        = require('gulp-concat'),
     livereload    = require('gulp-livereload'),
@@ -34,9 +33,7 @@ gulp.task('styles', function() {
 
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/js/**/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
+  return gulp.src(['app/js/init.js', 'app/js/**/*.model.js', 'app/js/**/*.js'])
     .pipe(sourcemaps.init())
       .pipe(concat('app.min.js'))
       .pipe(uglify())
