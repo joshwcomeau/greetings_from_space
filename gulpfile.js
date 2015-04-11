@@ -6,7 +6,9 @@ var gulp          = require('gulp'),
     uglify        = require('gulp-uglify'),
     concat        = require('gulp-concat'),
     livereload    = require('gulp-livereload'),
-    sourcemaps    = require('gulp-sourcemaps');
+    sourcemaps    = require('gulp-sourcemaps'),
+    webserver     = require('gulp-webserver');
+ 
 
 function errorLog (error) {
   console.error(error.message); 
@@ -14,7 +16,7 @@ function errorLog (error) {
 }
 
 gulp.task('default', function() {
-    gulp.start('styles', 'scripts', 'watch');
+    gulp.start('styles', 'scripts', 'watch', 'webserver');
 });
 
 gulp.task('styles', function() {
@@ -41,6 +43,15 @@ gulp.task('scripts', function() {
     .pipe(sourcemaps.write('./'))
     .on('error', errorLog)
     .pipe(gulp.dest('app/'));
+});
+
+gulp.task('webserver', function() {
+  gulp.src('app')
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: true,
+      open: "index.html"
+    }));
 });
 
 gulp.task('watch', ['styles', 'scripts'], function() {
