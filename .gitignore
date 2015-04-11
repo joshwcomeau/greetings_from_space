@@ -3,4 +3,4 @@
 
 # libs and modules
 node_modules/**
-app/js/libs/**
+app/libs/**
