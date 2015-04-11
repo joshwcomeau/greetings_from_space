@@ -1,1 +1,6 @@
+# Mac BS
 .DS_Store
+
+# libs and modules
+node_modules/**
+app/js/libs/**
