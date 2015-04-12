@@ -1,3 +1,41 @@
+@import 'variables';
+@import 'mixins';
+
+
 body {
-  font-size: 1em;
+  background: $color-sand;
+}
+
+header {
+  position: relative;
+  height: $height-header;
+  width: 100%;
+  background: url('../images/space_bg.png');
+
+  .title {
+    @include width-wrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    color: $color-offwhite;
+  }
+}
+
+.stripe {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+
+  &.first {
+    top: $height-header;
+    height: $height-stripe1;
+    background: $color-orange;
+  }
+
+  &.second {
+    top: $height-header + $height-stripe1;
+    height: $height-stripe2;
+    background: $color-green;
+  }
 }
