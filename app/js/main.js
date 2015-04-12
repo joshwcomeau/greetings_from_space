@@ -19,4 +19,4 @@ cards.on('sync', function(collection) {
 
 
 // Attach our view to the DOM
-var cardGenerator = new GreetingsFromSpace.Views.cardGenerator;
+var cardGenerator = new GreetingsFromSpace.Views.cardGenerator();
