@@ -4,3 +4,8 @@
 # libs and modules
 node_modules/**
 app/libs/**
+
+# Built CSS and JS files
+app/css/**
+app/app.min.js
+app/app.min.js.map
