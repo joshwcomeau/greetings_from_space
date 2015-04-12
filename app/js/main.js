@@ -12,7 +12,11 @@ cards.on('sync', function(collection) {
   console.log('collection is loaded', collection);
 });
 
-// Add a new card to this collection
+////// Add a new card to this collection
 // cards.add({
 //   header: "Hi! Space!"
 // });
+
+
+// Attach our view to the DOM
+var cardGenerator = new GreetingsFromSpace.Views.cardGenerator;

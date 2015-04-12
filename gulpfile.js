@@ -33,7 +33,10 @@ gulp.task('styles', function() {
 
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/js/init.js', 'app/js/**/*.model.js', 'app/js/**/*.collection.js', 'app/js/**/*.js'])
+  // The order matters. First we want our initialization, which attaches backbone to the window.
+  // Then we load models, then collections, then views.
+  // Then, all other javascript (such as our main.js).
+  return gulp.src(['app/js/init.js', 'app/js/**/*.model.js', 'app/js/**/*.collection.js', 'app/js/**/*.view.js', 'app/js/**/*.js'])
     .pipe(sourcemaps.init())
       .pipe(concat('app.min.js'))
       .pipe(uglify())
