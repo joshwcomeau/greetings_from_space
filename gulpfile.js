@@ -15,7 +15,7 @@ function errorLog (error) {
 }
 
 gulp.task('default', function() {
-    gulp.start('styles', 'scripts', 'watch', 'webserver');
+    gulp.start('styles', 'scripts', 'watch');
 });
 
 gulp.task('styles', function() {
