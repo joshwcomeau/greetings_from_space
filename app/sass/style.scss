@@ -51,11 +51,15 @@ header {
 
 #content {
   @include width-wrap;
-  z-index: 5;
-  margin-top: -3rem;
-  background: #FFF;
-  min-height: 400px;
-  border: 1px solid rgba(0,0,0,0.1);
-  outline: 1rem solid #FFF;
 
+}
+
+.postcard {
+  .front {
+    position: relative;
+    width: $width-postcard;
+    height: $height-postcard;
+    background: #FFF;
+    border: $border-postcard solid #FFF;
+  }
 }

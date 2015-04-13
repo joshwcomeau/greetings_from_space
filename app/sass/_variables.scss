@@ -8,5 +8,9 @@ $color-offwhite:  #ECE8CE;
 $height-header:   12rem;
 $height-stripe1:  2rem;
 $height-stripe2:  3rem;
+$height-postcard: 23rem;
 
-$width-max:       980px;
+$width-max:       42rem; 
+$width-postcard:  $width-max;
+
+$border-postcard: 1rem;
