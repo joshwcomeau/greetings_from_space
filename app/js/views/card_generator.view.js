@@ -3,6 +3,9 @@ GreetingsFromSpace.Views.cardGenerator = Backbone.View.extend({
   initialize: function() {
     this.render();
   },
+  getDateForCard: function() {
+
+  },
   render: function() {
     var template;
 
