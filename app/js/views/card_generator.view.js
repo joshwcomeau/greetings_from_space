@@ -1,29 +1,26 @@
 GreetingsFromSpace.Views.cardGenerator = Backbone.View.extend({
-  el: "#content",
+  el: "#card-generator",
   initialize: function() {
     this.render();
   },
   getDateForCard: function() {
-
+    this.model.set("photoDate", this.$("input").val());
   },
+  template: function(templateData, nasaData) {
+    return _.template(templateData)
+  },
+
+  events: {
+    'change input': 'getDateForCard'
+  },
+
   render: function() {
     var template;
 
-    // Get our photo of the day
-    $.ajax({
-      url: '/api/nasa', 
-      dataType: 'json',
-      success: function(rawNasaData) {
-        var nasaData = JSON.parse(rawNasaData);
-
-        $.get( '/templates/card_generator.template.html', function(templateData) {
-          template = _.template(templateData, { photoUrl: nasaData.url });
-          this.$el.html(template);
-        }.bind(this), 'html');
-
-      }.bind(this)
-    });
-
+    $.get( '/templates/card_generator.template.html', function(templateData) {
+      template = this.template(templateData);
+      this.$el.html(template);
+    }.bind(this), 'html');
     
   }
 });
